@@ -10,7 +10,7 @@
  * Return : Always 0 (Success)
  */
 
-int main(void)
+int main(positive or negative)
 {
 	int n;
 
