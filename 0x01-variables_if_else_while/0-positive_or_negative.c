@@ -1,16 +1,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there*/
 
-/* betty style doc for function main gows there */
 /**
- * main - Entry point
+ * main -Determines if a number is positive, negative or zero.
  *
- * Return : Always 0 (Success)
+ * Return: Always 0 (Success)
  */
-
-int main(positive or negative)
+/* betty style doc for function main goes there */
+int main(void)
 {
 	int n;
 
@@ -24,10 +22,10 @@ int main(positive or negative)
 	{
 		printf("%d is zero\n", n);
 	}
-
 	else
 	{
 		printf("%d is negative\n", n);
 	}
+	/* your code goes there */
 	return (0);
 }
