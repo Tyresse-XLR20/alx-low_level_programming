@@ -1,5 +1,5 @@
 #include "main.h"
-		
+
 #include <stdlib.h>
 
 /**
@@ -10,54 +10,37 @@
 */
 
 char *argstostr(int ac, char **av)
-
 {
+	int i, j, k, len;
+	char *str;
 
-int i, n, r = 0, l = 0;
+	if (ac == 0 || av == NULL)
+		return (NULL);
 
-char *str;
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+			len++;
+		len++;
+	}
 
-if (ac == 0 || av == NULL)
+	str = malloc(sizeof(char) * (len + 1));
 
-	return (NULL);
-	
-for (i = 0; i < ac; i++)
+	if (str == NULL)
+		return (NULL);
 
-{
+	k = 0;
 
-for (n = 0; av[i][n]; n++)
-		l++;	
-}
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			str[k] = av[i][j];
+			k++;
+		}
+		str[k] = '\n';
+		k++;
+	}
 
-l += ac;
-
-str = malloc(sizeof(char) * l + 1);
-
-if (str == NULL)
-
-	return (NULL);
-
-for (i = 0; i < ac; i++)
-
-{
-
-for (n = 0; av[i][n]; n++)
-
-{
-
-	str[r] = av[i][n];
-
-	r++;
-}
-
-if (str[r] == '\0')
-
-{
-
-str[r++] = '\n';
-
-}
-
-}
-return (str);		
+	return (str);
 }
