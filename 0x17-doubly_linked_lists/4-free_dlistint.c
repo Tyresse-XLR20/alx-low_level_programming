@@ -1,36 +1,23 @@
-#include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "lists.h"
 
 /**
- * Description: main - function to print the program name
+ * free_dlistint - frees an dlistint_t list
  *
- * @argc: parameter count
- * @argv: parameter 2
- *
- * return: 0 on success
+ * @head: the head of the list
+ * Return: no return
  */
 
-int main(int argc, char *argv[])
+void free_dlistint(dlistint_t *head)
 {
-	int sum, i;
+	dlistint_t *tmp;
 
-	for (i = 1; i < argc; i++)
+	if (head != NULL)
+		while (head->prev != NULL)
+			head = head->prev;
+
+	while ((tmp = head) != NULL)
 	{
-		if (argc == 0 || argc < 1)
-		{
-			return (0);
-		}
-		else if (!isdigit(*argv[i]))
-		{
-			printf("Error\n");
-			return (1);
-		}
-		else
-		{
-			sum = atoi(argv[i]);
-		}
+		head = head->next;
+		free(tmp);
 	}
-	printf("%d\n", sum);
-	return (0);
+}
