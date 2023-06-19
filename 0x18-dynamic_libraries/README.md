@@ -1,3 +1,1 @@
-C - Dynamic libraries
-
-I learned how to work with Dynamic libaries
+0x18. C - Dynamic libraries
